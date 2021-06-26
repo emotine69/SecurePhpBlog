@@ -1,0 +1,100 @@
+body {
+    background-color:gray !important; 
+    background-size: cover;
+    background-position:unset;
+}
+
+label {
+    color:darkslateblue;
+}
+h2 {
+    color:darkslateblue;
+}
+
+.navigation-bar {
+    background-color: #333;
+    overflow: hidden;
+    flex: auto;
+}
+
+.navigation-bar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navigation-bar a:hover{
+    background-color: #ddd;
+    color: black;
+}
+
+.navigation-bar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#HCB_comment_box {
+    background-color:turquoise;
+    font-size: medium;
+    opacity: 70%;
+
+}
+.login-box{
+    max-width: 700px;
+    float: none;
+    margin:150px auto;
+}
+
+.login-left{
+    background: rgba(211,211,211,0.5);
+    padding: 30px;
+}
+
+.login-right{
+    background:#fff;
+    padding: 30px;
+}
+
+.form-control {
+    background-color: transparent !important;
+}
+
+a{
+    color:aqua !important;
+    font-size: 20px;
+}
+
+h1 {
+    color:aqua;
+    margin-top: 200px !important;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 150px !important;
+}
+
+p{
+    color:white;
+    text-align: justify;
+    font-size:xx-large;
+}
+
+pre {
+    color: white !important;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+ }
+
+ thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
