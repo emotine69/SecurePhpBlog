@@ -18,14 +18,16 @@
 
 <body>
     <nav class="navigation-bar">
-        <a class="active" href="./index.php">Home</a>
-        <a href="./login.php">Sign in/Sign up</a>
+        <a href="./index.php">Home</a>
         <a href="./guestbook.php">Guestbook</a>
         <a href="./upload.php">Blog</a>
-        <a href="./welcome.php">Session</a>
+        <div style="float:right;">
+            <a href="./login.php">Sign in/Sign up</a>
 <?php        if(isset($_SESSION['user_id']) || isset($_SESSION['logged in'])){ ?>
+                <a class="active" href="#">You logged in with: <?php echo $_SESSION['username']?></a>
                 <a href="logout.php">Log Out</a>
 <?php        } ?>
+        </div>
     </nav>
     <div class="container mt-5">
     <?php

@@ -14,14 +14,16 @@
 </head>
 <body>
     <nav class="navigation-bar">
-        <a class="active" href="./index.php">Home</a>
-        <a href="./login.php">Sign in/Sign up</a>
+        <a href="./index.php">Home</a>
         <a href="./guestbook.php">Guestbook</a>
         <a href="./upload.php">Blog</a>
-        <a href="./welcome.php">Session</a>
-        <?php        if(isset($_SESSION['user_id']) || isset($_SESSION['logged in'])){ ?>
+        <div style="float:right;">
+            <a href="./login.php">Sign in/Sign up</a>
+<?php        if(isset($_SESSION['user_id']) || isset($_SESSION['logged in'])){ ?>
+                <a class="active" href="#">You logged in with: <?php echo $_SESSION['username']?></a>
                 <a href="logout.php">Log Out</a>
-        <?php        } ?>
+<?php        } ?>
+        </div>
     </nav>
     <div id="guestbook" style="text-align: center;">
         <h2 class="display-1 text-white"><b><i>Welcome to the Guestbook</i></b></h2><br>
@@ -30,7 +32,7 @@
                 <div class="col-12 col-6">
                     <div class="form-group fl_icon">
                         <div class="icon"><i class="fa fa-user"></i></div>
-                            <input class="form-input" type="text" placeholder="Your name" name="name">
+                            <input class="form-input" required="" type="text" placeholder="Your name" name="name">
                     </div>
                     <div class="col-12">	
                         <div class="form-group">

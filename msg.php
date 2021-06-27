@@ -7,9 +7,10 @@
     if(isset($_POST['name'])){
         $name = $_POST['name'];
         $comment = $_POST['comment'];
-        $sql_commands = "INSERT INTO $table(name,comment) VALUES ('$name','$comment')";
-        if(mysqli_query($db,$sql_commands)){
-            echo 'Inserted successfully';
+        $r = $db->prepare('INSERT INTO web(name,comment) VALUES (?,?)');
+        $r->bind_param('ss',$name,$comment);
+        if($r->execute()) {
+            echo 'Insert successfully';
         }
         else {
             echo mysqli_error($db);
