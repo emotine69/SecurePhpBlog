@@ -2,20 +2,24 @@
 
 session_start();
 
-$con = mysqli_connect('localhost','root','');
+$con = mysqli_connect('localhost','root','','userregistration');
 
-mysqli_select_db($con,'userregistration');
+// mysqli_select_db($con,'userregistration');
 
 if(isset($_POST['log'])){
     $name=$_POST['user'];
     $pass=$_POST['password'];
 }
-$s = "select * from usertable where name = '$name'";
-$result = mysqli_query($con,$s);
-$num = mysqli_num_rows($result);
+
+$sth = $con->prepare("select * from user_table where name = ?");
+$sth->bind_param("s", $name);
+$sth->execute();
+
+$result = $sth->get_result();
+$num = $sth->num_rows;
 
 if($num == 1){
-    while($row=mysqli_fetch_assoc($result)) {
+    while($row=mysqli_fetch_assoc($result))  {
         if(password_verify($pass,$row['password'])){
     $_SESSION['username'] = $name;
     $_SESSION['logged in']=time();
@@ -29,4 +33,7 @@ else{
     header('location:login.php');
     die();
 }
+
+$sth->close();
+$con->close();
 ?>
