@@ -30,8 +30,8 @@
     </nav>
     <div class="container mt-5">
         <form method="POST">
-            <input type="text" name="tittle" placeholder="Post Tittle" class="form-control bg-dark text-white my-3 text-center">
-            <textarea type="text" name="content" class="form-control bg-dark text-white my-3 rounded-0" id="exampleFormControlTextarea1" rows="20"></textarea>
+            <input type="text" required="" name="tittle" placeholder="Post Tittle" class="form-control bg-dark text-white my-3 text-center">
+            <textarea type="text" required="" name="content" class="form-control bg-dark text-white my-3 rounded-0" id="exampleFormControlTextarea1" rows="20"></textarea>
             <button name="new_post" class="btn btn-dark">Add post</button>
         </form>
     </div>

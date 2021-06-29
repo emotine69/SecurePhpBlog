@@ -8,16 +8,13 @@
     if(isset($_REQUEST["new_post"])){
         $tittle=$_REQUEST["tittle"];
         $content=$_REQUEST["content"];
+        $tittle_filter=filter_var($tittle,FILTER_SANITIZE_STRING);
+        $content_filter=filter_var($content,FILTER_SANITIZE_STRING);
         $r = $conn->prepare('INSERT INTO data(tittle,content) VALUES (?,?)');
-        $r->bind_param('ss',$tittle,$content);
+        $r->bind_param('ss',$tittle_filter,$content_filter);
         $r->execute();
         header("location:upload.php?info=added");
         exit();
-        /* $sql="INSERT INTO data(tittle,content) VALUES ('$tittle','$content')";
-        mysqli_query($conn,$sql);
-
-        header("Location: upload.php?info=added");
-        exit(); */
     }
 
     if(isset($_REQUEST['id'])) {

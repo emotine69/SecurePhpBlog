@@ -4,7 +4,6 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   exit();
 }
-
 $sql = "SELECT * FROM web";
 $result = mysqli_query($con, $sql);
 while($row = mysqli_fetch_assoc($result)){
